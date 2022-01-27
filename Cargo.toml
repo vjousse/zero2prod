@@ -13,21 +13,12 @@ name = "zero2prod"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-actix-web = "4.0.0-beta.16"
+actix-web = "4.0.0-beta.19"
 config = "0.11"
 serde = { version = "1", features = ["derive"]}
+chrono = "0.4.15"
+sqlx = { version = "0.5.5", default-features = false, features = [ "runtime-actix-rustls", "macros", "postgres", "uuid", "chrono", "migrate", "offline"] }
 
-[dependencies.sqlx]
-version = "0.5.7"
-default-features = false
-features = [
-  "runtime-actix-rustls",
-  "macros",
-  "postgres",
-  "uuid",
-  "chrono",
-  "migrate"
-]
 
 [dev-dependencies]
 actix-rt = "2"
